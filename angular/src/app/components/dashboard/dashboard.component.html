@@ -1,0 +1,86 @@
+<br><br><br><br>
+<button type="button" *ngIf="!dispColonies" id="back-btn" class="btn btn-outline-primary" (click)="goBack()">←</button>
+<div class="container">
+    <div *ngIf="dispColonies">
+        <div class="card" *ngFor="let colony of colonies">
+            <div id="content">
+                <div id="left">
+                    <div id="title">
+                        <h1>{{colony.name}}</h1>
+                    </div>
+                    <div id="btns">
+                        <button class="btn btn-success" (click)="showWings(colony._id)">Show Buildings</button>
+                    </div>
+                </div>
+                <div id="right">
+                    <h3>
+                        <i class="material-icons">commute</i>
+                        Distance: {{colony.distance}}
+                    </h3>
+                    <h3>
+                        <i class="material-icons md-18">pool</i>
+                        Pool: 
+                        <i *ngIf="colony.pool" class="material-icons">check</i>
+                        <i *ngIf="!colony.pool" class="material-icons">clear</i>
+                    </h3>
+                    <h3>
+                        <i class="material-icons">person</i>
+                        Secretary: {{colony.secretary}}
+                    </h3>
+                    <h3>
+                        <i class="material-icons">call</i>
+                        Contact: {{colony.contact}}
+                    </h3>
+                    <h3>
+                        <i class="material-icons">sports_tennis</i>
+                        Sports: 
+                        <i *ngIf="colony.sports" class="material-icons">check</i>
+                        <i *ngIf="!colony.sports" class="material-icons">clear</i>
+                    </h3>
+                    <h3>
+                        <i class="material-icons">local_hospital</i>
+                        Hospital:
+                        <i *ngIf="colony.phc" class="material-icons">check</i>
+                        <i *ngIf="!colony.phc" class="material-icons">clear</i>
+                    </h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="dispWings">
+        <h2>Select the wing:</h2>
+        <div id="wing-btns">
+            <span *ngFor="let wing of wings">
+                <button class="btn btn-success" (click)="showHomes(wingCol, wing)">{{wing}}</button>
+            </span>
+        </div>
+    </div>
+
+    <div *ngIf="dispHomes">
+        <h2>Homes</h2>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>House No.</th>
+                <th>Owner Name</th>
+                <th>Wing ID</th>
+                <th>Floor #</th>
+                <th>Size</th>
+                <th>Contact No.</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let home of homes">
+                    <th scope="row">{{home.hno}}</th>
+                    <td>{{home.owner}}</td>
+                    <td>{{home.wing}}</td>
+                    <td>{{home.floor}}</td>
+                    <td>{{home.size}} BHK</td>
+                    <td>{{home.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

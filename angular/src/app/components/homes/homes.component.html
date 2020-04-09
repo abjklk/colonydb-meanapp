@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="content">
+        <div class="form">
+            <form class="homes-form" id="homes-form">
+                <p id="status">{{status}}</p>
+                <!-- <input type="text" placeholder="name"/> -->
+                <input type="text" [(ngModel)]="hno" name="hno" placeholder="House no."/>
+                <input type="text" [(ngModel)]="owner" name="owner" placeholder="Owner Name"/>
+                <select [(ngModel)]="colonyName" name="colonyName">
+                    <option>Select</option>
+                    <option *ngFor="let colony of colonies">{{colony.name}}</option>
+                </select>
+                <input type="text" [(ngModel)]="wing" name="wing" placeholder="Select Wing"/>
+                <input type="text" [(ngModel)]="floor" name="floor" placeholder="Floor No."/>
+                <input type="text" [(ngModel)]="size" name="size" placeholder="Select Size (BHK)"/>
+                <input type="text" [(ngModel)]="contact" name="contact" placeholder="Contact Info"/>
+                <button (click)="addHome()">Add Home</button>
+            </form>
+        </div>
+    </div>
+</div>

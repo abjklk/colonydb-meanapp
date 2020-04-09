@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="content">
+    <div class="form">
+        <form class="colony-form" id="colony-form">
+            <p id="status">{{status}}</p>
+            <!-- <input type="text" placeholder="name"/> -->
+            <input type="text" [(ngModel)]="name" name="name" placeholder="colony name"/>
+            <input type="text" [(ngModel)]="wings" name="wings" placeholder="wings"/>
+            <input type="text" [(ngModel)]="distance" name="distance" placeholder="distance"/>
+            <input type="text" [(ngModel)]="contact" name="contact" placeholder="Mobile Number"/>
+            <input type="text" [(ngModel)]="secretary" name="secretary" placeholder="secretary name"/>
+            <div class="checkbox" style="display: flex;justify-content: space-around;">
+                <label><input [(ngModel)]="phc" name="phc" type="checkbox" value="">PHC</label>
+                <label><input [(ngModel)]="pool" name="pool" type="checkbox" value="">Pool</label>
+                <label><input [(ngModel)]="sports" name="sports" type="checkbox" value="">Sports</label>
+            </div>
+            <button (click)="addColony()">create colony</button>
+        </form>
+    </div>
+</div>
+</div>
