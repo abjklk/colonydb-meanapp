@@ -18,6 +18,7 @@ import {AuthService} from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { HomesComponent } from './components/homes/homes.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export function tokenGetter() {
   return localStorage.getItem("id_token");
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     HomesComponent,
-    UploadComponent
+    UploadComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

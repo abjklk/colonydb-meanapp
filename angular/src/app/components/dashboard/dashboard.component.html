@@ -2,6 +2,8 @@
 <button type="button" *ngIf="!dispColonies" id="back-btn" class="btn btn-outline-primary" (click)="goBack()">←</button>
 <div class="container">
     <div *ngIf="dispColonies">
+        <h2>Colonies</h2>
+
         <div class="card" *ngFor="let colony of colonies">
             <div id="content">
                 <div id="left">
@@ -17,19 +19,17 @@
                         <i class="material-icons">commute</i>
                         Distance: {{colony.distance}}
                     </h3>
+                    
+                    <h3>
+                        <i class="material-icons">person</i>
+                        Secretary: {{colony.secretary}}
+                    </h3>
+                    
                     <h3>
                         <i class="material-icons md-18">pool</i>
                         Pool: 
                         <i *ngIf="colony.pool" class="material-icons">check</i>
                         <i *ngIf="!colony.pool" class="material-icons">clear</i>
-                    </h3>
-                    <h3>
-                        <i class="material-icons">person</i>
-                        Secretary: {{colony.secretary}}
-                    </h3>
-                    <h3>
-                        <i class="material-icons">call</i>
-                        Contact: {{colony.contact}}
                     </h3>
                     <h3>
                         <i class="material-icons">sports_tennis</i>
@@ -43,13 +43,16 @@
                         <i *ngIf="colony.phc" class="material-icons">check</i>
                         <i *ngIf="!colony.phc" class="material-icons">clear</i>
                     </h3>
-
+                    <h3>
+                        <i class="material-icons">call</i>
+                        Contact: {{colony.contact}}
+                    </h3>
                 </div>
             </div>
         </div>
     </div>
 
-    <div *ngIf="dispWings">
+    <div *ngIf="dispWings" style="height: 800px">
         <h2>Select the wing:</h2>
         <div id="wing-btns">
             <span *ngFor="let wing of wings">
@@ -58,7 +61,7 @@
         </div>
     </div>
 
-    <div *ngIf="dispHomes">
+    <div *ngIf="dispHomes" style="height: 800px">
         <h2>Homes</h2>
         <table class="table table-hover">
             <thead>
@@ -84,3 +87,4 @@
         </table>
     </div>
 </div>
+<br><br>

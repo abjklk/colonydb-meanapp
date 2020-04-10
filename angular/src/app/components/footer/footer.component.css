@@ -1,0 +1,21 @@
+  .section{
+    text-align:center;
+    padding:30px 80px;
+  }
+
+  .section-dark{
+    background-color:#282e34;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color:#ddd;
+  }
+  
+  #abt{
+    line-height: 10px;
+    text-align: right;
+  }
+  
+  #logos img{
+    padding: 5px;
+    filter: grayscale(70%);
+  }

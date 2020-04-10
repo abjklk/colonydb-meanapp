@@ -1,3 +1,4 @@
+<br><br><br>
 <div class="container">
     <div class="content">
         <div class="form">
@@ -6,11 +7,17 @@
                 <!-- <input type="text" placeholder="name"/> -->
                 <input type="text" [(ngModel)]="hno" name="hno" placeholder="House no."/>
                 <input type="text" [(ngModel)]="owner" name="owner" placeholder="Owner Name"/>
-                <select [(ngModel)]="colonyName" name="colonyName">
-                    <option>Select</option>
-                    <option *ngFor="let colony of colonies">{{colony.name}}</option>
+
+                <select [(ngModel)]="colony" name="colony">
+                    <option value="" disabled selected>Select Colony</option>
+                    <option [ngValue]="c" *ngFor="let c of colonies">{{c.name}}</option>
                 </select>
-                <input type="text" [(ngModel)]="wing" name="wing" placeholder="Select Wing"/>
+
+                <select [(ngModel)]="wing" name="wing">
+                    <option value="" disabled selected>Select Wing</option>
+                    <option [ngValue]="w" *ngFor="let w of colony.wings">{{w}}</option>
+                </select>
+
                 <input type="text" [(ngModel)]="floor" name="floor" placeholder="Floor No."/>
                 <input type="text" [(ngModel)]="size" name="size" placeholder="Select Size (BHK)"/>
                 <input type="text" [(ngModel)]="contact" name="contact" placeholder="Contact Info"/>

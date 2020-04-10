@@ -16,19 +16,21 @@
 #content{
 	display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 20px;
+    padding-bottom: 0px;
 }
 #left{
 	display: flex;
     flex-direction: column;
+    text-align: center;
     height: 120px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 #right{
-	width: 40%;
-    padding-top: 40px;
-    
+    width: 40%;
+    text-align: end;    
 }
 
 #title{
@@ -39,22 +41,6 @@
 	text-align: left;
 	width: 100%;
 }
-/*
-::ng-deep #btns{
-	align-self: flex-start;	
-	display: flex;
-	justify-content: space-around;
-	width: 50%;
-}
-li{
-    padding: 20px;
-    background: #f6f6f6;
-    font-size: 18px;
-    color: #555;
-    position: relative;
-    border-bottom: 1px solid #e6e6e6;
-    height: 46px;
-}*/
 .material-icons{ font-size: 18px; }
 
 #back-btn{

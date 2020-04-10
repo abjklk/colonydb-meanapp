@@ -31,7 +31,6 @@ export class DashboardComponent implements OnInit {
   showWings(id){
     let req = {id: id}
     this.colonyService.getColonybyId(req).subscribe(doc => {
-      // console.log(doc.colony.wings);
       this.wings = doc.colony.wings;
       this.wingCol = doc.colony.name;
     });

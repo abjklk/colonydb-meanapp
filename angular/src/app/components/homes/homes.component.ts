@@ -11,30 +11,32 @@ export class HomesComponent implements OnInit {
 
   hno: String;
   owner: String;
-  colonyName: String;
   wing: String;
   floor: Number;
   size: Number;
   contact: String;
   
   status: String;
+  colony: any;
   colonies: Array<Object>;
-  wings: Array<String>;
-
+  
   constructor(private homeService: HomeService, private colonyService: ColonyService) {
     this.colonyService.getColonies().subscribe(doc =>{
       this.colonies = doc.colonies;
     });
-   }
+    this.colony=[];
+    this.wing="";
+  }
 
   ngOnInit(): void {
   }
+
 
   addHome(){
       let home = {
         hno: this.hno,
         owner: this.owner,
-        colony: this.colonyName,
+        colony: this.colony.name,
         wing: this.wing,
         floor: this.floor,
         size: this.size,

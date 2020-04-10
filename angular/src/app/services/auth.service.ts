@@ -10,6 +10,7 @@ export class AuthService {
   authToken: any;
   user: any;
 
+
   constructor(private http:HttpClient,private jwtHelper: JwtHelperService, private router: Router) { }
 
   registerUser(user){
