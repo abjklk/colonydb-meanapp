@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 const cors = require('cors');
 
-mongoose.connect(config.database);
+mongoose.connect(process.env.MONGOLAB_URI);
 
 mongoose.connection.on('connected',()=>{
 	console.log("Connected to db "+config.database);
