@@ -1,4 +1,4 @@
 module.exports = {
-	database: 'mongodb://localhost:27017/colonydb',
+	database: 'mongodb+srv://abjklk:colonydb@cluster0-wcdm9.gcp.mongodb.net/test?retryWrites=true&w=majority',
 	secret: 'gaurav',
 }
