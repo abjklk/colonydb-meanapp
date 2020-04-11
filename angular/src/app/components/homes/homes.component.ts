@@ -9,11 +9,11 @@ import { ColonyService } from '../../services/colony.service';
 })
 export class HomesComponent implements OnInit {
 
-  hno: String;
+  hno: number;
   owner: String;
   wing: String;
-  floor: Number;
-  size: Number;
+  floor: number;
+  size: number;
   contact: String;
   
   status: String;
@@ -33,6 +33,19 @@ export class HomesComponent implements OnInit {
 
 
   addHome(){
+    if (typeof this.owner == 'undefined' || typeof this.owner == 'undefined' || typeof this.owner == 'undefined' ||this.colony.length==0||this.wing==""||typeof this.contact == "undefined") {
+      this.status = "Enter All Fields";
+    }
+    else if (isNaN(this.hno)){
+      this.status = "X Improper House No.";
+    }
+    else if (isNaN(this.floor)){
+      this.status = "X Improper Floor No.";
+    }
+    else if (isNaN(this.size)){
+      this.status = "X Improper Size";
+    }
+    else{
       let home = {
         hno: this.hno,
         owner: this.owner,
@@ -47,4 +60,5 @@ export class HomesComponent implements OnInit {
         this.status = data.msg;
       });
     }
+  }
   }

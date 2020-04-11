@@ -11,18 +11,18 @@ export class ColonyService {
   getColonies(){
     let headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
-    return this.http.get<any>('http://localhost:3000/colony/colony', {headers: headers});
+    return this.http.get<any>('colony/colony', {headers: headers});
   }
 
   getColonybyId(id){
     let headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
-    return this.http.post<any>('http://localhost:3000/colony/byid', id, {headers: headers});
+    return this.http.post<any>('colony/byid', id, {headers: headers});
   }
 
   insertColony(colony){
     let headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
-    return this.http.post<any>('http://localhost:3000/colony/addcolony', colony, {headers: headers});  
+    return this.http.post<any>('colony/addcolony', colony, {headers: headers});  
   }
 }

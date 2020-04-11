@@ -22,10 +22,9 @@ const users = require('./routes/users');
 const colonies = require('./routes/colonies');
 const homes = require('./routes/homes');
 
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());

@@ -5,8 +5,8 @@
         <form class="colony-form" id="colony-form">
             <p id="status">{{status}}</p>
             <!-- <input type="text" placeholder="name"/> -->
-            <input type="text" [(ngModel)]="name" name="name" placeholder="colony name"/>
-            <input type="text" [(ngModel)]="wings" name="wings" placeholder="wings"/>
+            <input type="text" [(ngModel)]="name" name="name" required placeholder="colony name"/>
+            <input type="text" [(ngModel)]="wingNum" name="wingNum" placeholder="No. of wings"/>
             <input type="text" [(ngModel)]="distance" name="distance" placeholder="distance"/>
             <input type="text" [(ngModel)]="contact" name="contact" placeholder="Mobile Number"/>
             <input type="text" [(ngModel)]="secretary" name="secretary" placeholder="secretary name"/>

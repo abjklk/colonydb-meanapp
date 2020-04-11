@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-
 #status{
   font-family: "Roboto", sans-serif;
   background-color:tomato;
@@ -9,7 +8,7 @@
 
 .login-page {
   width: 360px;
-  height: 100%;
+  height: 700px;
   padding: 8% 0 0;
   margin: auto;
 }

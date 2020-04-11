@@ -7,7 +7,6 @@
             <input type="text" [(ngModel)]="username" name="username" placeholder="Pick a username"/>
             <input type="text" [(ngModel)]="email" name="email" placeholder="Enter your email"/>
             <input type="password"  [(ngModel)]="password" name="password" placeholder="Pick a password"/>
-            <!-- <input type="text" id="phone" placeholder="Mobile Number"/> -->
             <button id="signup-btn" (click)="onSubmit()">create</button>
             <p class="message">Already registered? <a [routerLink]="['/login']">Sign In</a></p>
         </form>

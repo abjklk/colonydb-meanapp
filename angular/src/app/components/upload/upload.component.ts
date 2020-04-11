@@ -16,22 +16,34 @@ export class UploadComponent implements OnInit {
   sports: Boolean;
   pool: Boolean;
   phc: Boolean;
+  
   status : String;
+  wingNum : number;
 
   constructor(private colonyService: ColonyService) { 
     this.sports = false;
     this.phc = false;
     this.pool = false;
+    this.wings=[];
   }
 
   ngOnInit(): void {
   }
 
   addColony(){
-    if(isNaN(this.distance)){
+    if (typeof this.name == 'undefined' || typeof this.wingNum == 'undefined' || typeof this.secretary == 'undefined'){
+      this.status = "X Enter All Fields";
+    }
+    else if (isNaN(this.wingNum) || this.wingNum>26){
+      this.status = "X Improper Wing #";
+    }
+    else if(isNaN(this.distance)){
       this.status = "X Improper Distance";
     }
     else{
+      for (var i = 0; i < this.wingNum; i++) {
+        this.wings.push((i+10).toString(36).toUpperCase());     
+      }
       let colony = {
         name: this.name,
         wings: this.wings,
@@ -42,9 +54,8 @@ export class UploadComponent implements OnInit {
         pool: this.pool,
         phc: this.phc
       } 
-
       this.colonyService.insertColony(colony).subscribe(data =>{
-        this.status = data.msg;
+        this.status = data.msg; 
       });
     }
   }
