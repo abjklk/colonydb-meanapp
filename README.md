@@ -1,6 +1,8 @@
 # colonydb-meanapp
 
-Colony MEAN app
+# App URL : https://coldb.herokuapp.com
+
+ColonyDB MEAN app
 
 ### Version
 1.0.0
